@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>Hello type "start" to continue.</template>
+  </category>
+  
+  <category>
+      <pattern>^ START ^</pattern>
+        <template>
+        Are you more logical or creative?
+          <button>
+              <text>Logical</text>
+              <postback>Logical</postback>
+          </button>
+          <button>
+              <text>Creative</text>
+              <postback>Creative</postback>
+          </button>
+        </template>
+  </category>
+  
+  <!-- Logical Branch -->
+  <category>
+      <pattern>Logical</pattern>
+      <template>
+      Do you like working with Data?
+      <button>
+          <text>Yes</text>
+          <postback>yesData</postback>
+      </button>
+      <button>
+          <text>No</text>
+          <postback>noData</postback>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>yesData</pattern>
+      <template>
+          Have you considered becoming a Data Engineer?
+          <br/> Read more about it
+          <link>
+              <text>here</text>
+              <url>https://www.techtarget.com/searchdatamanagement/definition/data-engineer</url>
+          </link>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>noData</pattern>
+      <template>
+          Do you like hacking and working with device security?
+          <button>
+              <text>yes</text>
+              <postback>yesSecurity</postback>
+          </button>
+          <button>
+              <text>no</text>
+              <postback>noSecurity</postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>yesSecurity</pattern>
+      <template>
+          Have you considered working as a cyber security engineer?
+          <br/> Read more about it
+          <link>
+              <text>here</text>
+              <url>https://www.comptia.org/blog/what-is-a-cybersecurity-engineer</url>
+          </link>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>noSecurity</pattern>
+      <template>
+          It sounds like a backend developer job is a good fit for you.
+          <br/>If that sounds interesting read more about it 
+          <link>
+              <text>here</text>
+              <url>https://roadmap.sh/backend#:~:text=A%20backend%20developer%20focuses%20on,manage%20high%20traffic%20volumes%20efficiently.</url>
+          </link>
+      </template>
+  </category>
+  
+  <!-- Creative Branch -->
+  <category>
+      <pattern>Creative</pattern>
+      <template>
+            Do you like to code or create designs?
+            <button>
+              <text>Code</text>
+              <postback>Code</postback>
+            </button>
+            <button>
+              <text>Create Designs</text>
+              <postback>Create Designs</postback>
+            </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Create Designs</pattern>
+      <template>
+          Have you considered becoming a UI designer?
+          <br/>Read more about it 
+          <link>
+              <text>here</text>
+              <url>https://careerfoundry.com/en/blog/ui-design/what-does-a-ui-designer-actually-do/</url>
+          </link>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>Code</pattern>
+      <template>
+          Have you considered becoming a front-end software developer?
+          <br/>Read more about it 
+          <link>
+              <text>here</text>
+              <url>https://frontendmasters.com/guides/front-end-handbook/2018/what-is-a-FD.html</url>
+          </link>
+      </template>
+  </category>
+</aiml>
